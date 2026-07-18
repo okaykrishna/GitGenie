@@ -1,0 +1,104 @@
+:root {
+  --bg: #0a0c10;
+  --surface: #12151c;
+  --surface-2: #171b24;
+  --border: #232833;
+  --text: #e6edf3;
+  --muted: #7d8590;
+  --add: #3fb950;
+  --add-dim: #1a3323;
+  --remove: #f85149;
+  --focus: #6e9fff;
+  --highlight: #e3b341;
+
+  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-body: "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(110, 159, 255, 0.08), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(227, 179, 65, 0.06), transparent 40%);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  color: var(--add);
+  margin-right: 6px;
+}
+
+.topbar-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+}
+
+.footer {
+  padding: 24px 32px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  text-align: center;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--add-dim);
+  color: var(--add);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
